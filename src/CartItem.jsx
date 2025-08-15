@@ -14,10 +14,15 @@ const CartItem = ({ onContinueShopping }) => {
       .toFixed(2);
   };
 
-  const handleContinueShopping = (e) => {
-  e.preventDefault();
-  onContinueShopping();
-}
+ const handleContinueShopping = (e) => {
+    e.preventDefault();
+    setShowCart(false);
+};
+
+const handleCheckoutShopping = () => {
+  alert('Functionality to be added for future reference');
+};
+
 
 
 
@@ -70,10 +75,14 @@ const CartItem = ({ onContinueShopping }) => {
       </div>
       <div style={{ marginTop: '20px', color: 'black' }} className='total_cart_amount'></div>
       <div className="continue_shopping_btn">
-        <button className="get-started-button" onClick={(e) => handleContinueShopping(e)}>Continue Shopping</button>
-        <br />
-        <button className="get-started-button1">Checkout</button>
-      </div>
+  <button className="get-started-button" onClick={onContinueShopping}>
+    Continue Shopping
+  </button>
+  <br />
+ <button className="get-started-button1" onClick={handleCheckoutShopping}>Checkout</button>
+
+</div>
+
     </div>
   );
 };
